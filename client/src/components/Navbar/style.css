@@ -1,0 +1,20 @@
+.navbar, .collapse {
+    background-color: #6504B5 !important;
+    width: 100%
+}
+
+.navbar-brand, .nav-link, .navbar-text {
+    color: #ecd7fd;
+}
+
+.navbar-brand:hover, .nav-link:hover {
+    color: white;
+}
+
+.navbar-brand {
+    padding-left: 350px;
+}
+
+.navbar-text {
+    padding-right: 350px;
+}

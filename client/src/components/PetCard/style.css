@@ -1,0 +1,8 @@
+.noPet {
+    text-align: center !important;
+}
+
+.delete-btn {
+    justify-content: center !important;
+    display: flex
+}
