@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { useStoreContext } from "../utils/GlobalState";
-import { ADD_POST, LOADING } from "../utils/actions";
-import API from "../utils/API";
+import { useStoreContext } from "../../utils/GlobalState";
+import { ADD_POST, LOADING } from "../../utils/actions";
+import API from "../../utils/API";
 import "./style.css";
 import { Card } from 'reactstrap';
 

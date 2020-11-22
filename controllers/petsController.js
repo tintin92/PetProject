@@ -1,4 +1,5 @@
 const db = require("../models");
+const Pet = require("../models/pets")
 
 // Defining methods for the PetsController
 module.exports = {

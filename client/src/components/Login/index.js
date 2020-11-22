@@ -19,8 +19,8 @@ function Login() {
 	}, [redirectToReferrer, history, location.state])
 
 
-    /* We need to POST to the API the users info,
-        This will get passed down as a prop to the LoginForm */
+	/* We need to POST to the API the users info,
+			This will get passed down as a prop to the LoginForm */
 	const login = (data) => {
 		console.log('Logging in ' + JSON.stringify(data));
 		fetch('api/users/login', {
@@ -47,7 +47,9 @@ function Login() {
 
 	return (
 		<div>
-			<LoginForm onLogin={login} />
+			<div className="content">
+				<LoginForm onLogin={login} />
+			</div>
 		</div>
 	)
 }

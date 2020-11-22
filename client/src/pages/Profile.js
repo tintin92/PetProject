@@ -1,9 +1,9 @@
 import Budget from "../components/Budget/budget";
 import PetCard from "../components/PetCard/card";
-import { useStoreContext } from "../components/utils/GlobalState";
+import { useStoreContext } from "../utils/GlobalState";
 import React, { useEffect } from "react";
-import { REMOVE_POST, UPDATE_POSTS, LOADING } from "../components/utils/actions";
-import API from "../components/utils/API";
+import { REMOVE_POST, UPDATE_POSTS, LOADING } from "../utils/actions";
+import API from "../utils/API";
 import CreateProfile from "../components/CreateProfile/profile"
 import {
   Card, CardImg, CardText, CardBody,
@@ -37,9 +37,9 @@ function Profile() {
       .catch(err => console.log(err));
   };
 
-  useEffect(() => {
-    getProfiles();
-  }, []);
+  // useEffect(() => {
+  //   getProfiles();
+  // }, []);
 
 
   return (

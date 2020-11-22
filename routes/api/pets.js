@@ -3,19 +3,14 @@ const petsController = require("../../controllers/petsController");
 
 // Matches with "/api/pets"
 router.route("/")
-  .post(petsController.addPet)
-
-router.route("/:user")
-  .get(petsController.getMyPets);
+  .get(petsController.findAll)
+  .post(petsController.create);
 
 // Matches with "/api/pets/:id"
-router.route("/:petid")
-  .put(petsController.updatePet)
-  .delete(petsController.deletePet)
-  .get(petsController.getPet);
-
-router.route("/mypets/:user")
-  .get(petsController.getAllPets);
-
+router
+  .route("/:id")
+  .get(petsController.findById)
+  .put(petsController.update)
+  .delete(petsController.remove);
 
 module.exports = router;

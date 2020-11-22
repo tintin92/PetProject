@@ -9,7 +9,7 @@ const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const flash = require('connect-flash');
 const routes = require('./routes/index');
-// const Users = require("./routes/api/Users")
+const users = require("./routes/api/users")
 /* === Set the PORT to work with deployment environment === */
 const PORT = process.env.PORT || 3001;
 /* === Call Express as app === */
@@ -34,13 +34,17 @@ app.use(flash());
 
 /* Serve up static assets (usually on heroku) */
 if (process.env.NODE_ENV === "production") {
-  app.use(passport.session()); app.use(express.static(path.join(__dirname, './client/build')));
+  app.use(passport.session());
+  app.use(express.static(path.join(__dirname, './client/build')));
 
 };
 
 /* === Routing === */
 
 app.use(routes);
+app.use("/api/users", users);
+
+
 
 /* === Express 404 error handler === */
 app.use(function (req, res, next) {
@@ -50,7 +54,7 @@ app.use(function (req, res, next) {
 });
 
 /* === Server-Side Authentication w/passport.js on our Model === */
-const User = require('./models/User');
+const User = require('./models/user');
 passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());

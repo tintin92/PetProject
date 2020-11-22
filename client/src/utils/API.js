@@ -1,4 +1,3 @@
-
 import axios from "axios";
 
 export default {
@@ -13,13 +12,12 @@ export default {
       url: "/api/users/signup"
   }).then((res) => console.log(res));
 },
-
   addPet: function (pets) {
     console.log(pets)
     return axios({
       method: "POST",
       data: pets,
-      url: "./api/pets"
+      url: "/api/pets"
     }).then((res) => console.log(res, "hello"));
   }, 
   getMyPets: function (user) {
@@ -38,8 +36,7 @@ export default {
     });
   },
 
-
-  deletepet: function (petid) {
+  deletePet: function (petid) {
     return axios({
       method: "DELETE",
       withCredential: true,
@@ -48,7 +45,7 @@ export default {
   },
 
 
-  updatepet: function (petid, data) {
+  updatePet: function (petid, data) {
     return axios({
       method: "PUT",
       data: data,
@@ -57,13 +54,13 @@ export default {
     }).then((res) => console.log(res));
   },
 
-
-
   getAllPets: function (user) {
     return axios({
       method: "GET",
       withCredential: true,
-      url: "/api/pets/getallpets/" + user
+      url: "/api/pets/pet/" + user
+      
+
     });
   },
 };

@@ -6,13 +6,13 @@ import {
 	Switch
 } from 'react-router-dom';
 import Auth from "./utils/Auth";
-import Nav from "./components/Nav";
+import Nav from "./components/Navbar/navbar";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Profile from "./pages/Profile";
 import MyPets from "./pages/MyPets";
 import AddPet from "./pages/AddPet"
-import PublicRoute from "./pages/Home";
+import PublicRoute from "./pages/PublicRoute";
 import ProtectedRoute from "./pages/ProtectedRoute";
 import NoMatch from "./pages/NoMatch";
 import { UserProvider } from "./utils/UserContext";
