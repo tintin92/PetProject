@@ -1,3 +1,6 @@
+#Project 3 Pet Pals Authentication BoilerPlate
+
+
 # M.E.R.N. Authentication Boilerplate
 Full Stack Project starter with basic components routes and authentication. The project is in MVC format that includes the User model and controller. The first routes in the client are protected by the passport authentication using the local strategy. 
 
