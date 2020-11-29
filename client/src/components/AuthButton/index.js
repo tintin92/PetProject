@@ -1,19 +1,20 @@
 import React, { useContext } from 'react'
 import { useHistory } from 'react-router-dom';
-import {UserContext} from "../../utils/UserContext";
+import Auth from "../../utils/Auth";
+import { UserContext } from "../../utils/UserContext";
 import { Link } from "react-router-dom";
 
 const AuthButton = () => {
-	console.log("NAV", User.isAuthenticated);
+	console.log("NAV", Auth.isAuthenticated);
 
-	const [User, dispatch] = useContext(UserContext);
+	const [user, dispatch] = useContext(UserContext);
 	const history = useHistory();
 
 	return (
-		User.isAuthenticated ? (
+		Auth.isAuthenticated ? (
 			<button className="btn btn-danger"
 				onClick={() => {
-					User.signout(() => history.push('/login'))
+					Auth.signout(() => history.push('/login'))
 					dispatch({
 						type: "GET_USER",
 						payload: {}

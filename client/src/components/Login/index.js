@@ -23,7 +23,7 @@ function Login() {
 			This will get passed down as a prop to the LoginForm */
 	const login = (data) => {
 		console.log('Logging in ' + JSON.stringify(data));
-		fetch('api/users/login', {
+		fetch('api/accounts/login', {
 			method: 'POST',
 			body: JSON.stringify(data),
 			credentials: 'include',
