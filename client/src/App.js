@@ -6,37 +6,33 @@ import {
 	Switch
 } from 'react-router-dom';
 import Auth from "./utils/Auth";
-import Nav from "./components/Navbar/navbar";
+import Nav from "./components/Navbar";
 import Login from "./components/Login";
 import Register from "./components/Register";
-import Profile from "./pages/Profile";
-import MyPets from "./pages/MyPets";
-import AddPet from "./pages/AddPet"
+import { Container } from "./components/Grid";
 import PublicRoute from "./pages/PublicRoute";
 import ProtectedRoute from "./pages/ProtectedRoute";
 import NoMatch from "./pages/NoMatch";
 import { UserProvider } from "./utils/UserContext";
-const dotenv = require("dotenv").config()
+import "./App.css";
+// const dotenv = require("dotenv").config()
 
 //Now we have all the stuff we need .. let's render some components with the Router
 const AuthExample = () => (
 	<UserProvider>
 		<Router>
 			<div>
-				<div>
-					<Nav />
+					<Nav className="App-header" />
+				<Container>
 					<Switch>
 						<Route exact path="/" component={PublicRoute} />
 						<Route path="/login" component={Login} />
 						<Route path="/register" component={Register} />
-						<Route exact path="/search/:id" component={Profile} />
-						<Route path="/mypet:id" component={MyPets} />
-						<Route path="/addpet/:id" component={AddPet} />
-						<PrivateRoute path="/explore" component={ProtectedRoute} />
+						<PrivateRoute path="/mypets/" component={ProtectedRoute} />
 						<Route exact path="*" component={NoMatch} />
 						<Route component={NoMatch} />
 					</Switch>
-				</div>
+				</Container>
 			</div>
 		</Router>
 	</UserProvider>

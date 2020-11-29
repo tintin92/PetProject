@@ -14,9 +14,8 @@ function reducer(state, action) {
 
 function UserProvider({ value = {}, ...props }) {
     const [state, dispatch] = useReducer(reducer, []);
-    localStorage.setItem("user", state.username)
 
-    return <Provider value={[state.id, dispatch]} {...props} />;
+    return <Provider value={[state, dispatch]} {...props} />;
 }
 
 export { UserProvider, UserContext };
